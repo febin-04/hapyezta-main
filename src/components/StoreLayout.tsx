@@ -108,25 +108,12 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
                 on Instagram for sticker drops & restocks.
               </p>
             </details>
-            <details className="py-3 group">
-              <summary className="flex justify-between items-center text-primary font-bold cursor-pointer list-none font-display">
-                Quick Links <span className="text-xl group-open:rotate-45 transition-transform">+</span>
-              </summary>
-              <ul className="text-sm text-muted-foreground pt-2 space-y-1">
-                <li><Link to="/shop" className="hover:text-primary transition-colors">Shop All</Link></li>
-                <li><span className="hover:text-primary transition-colors cursor-pointer">About us</span></li>
-                <li><span className="hover:text-primary transition-colors cursor-pointer">Shipping policy</span></li>
-                <li><span className="hover:text-primary transition-colors cursor-pointer">Returns</span></li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="hover:text-primary transition-colors cursor-pointer"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </details>
+            <Link
+              to="/contact"
+              className="flex justify-between items-center text-primary font-bold py-3.5 font-display hover:text-primary/80 transition-colors"
+            >
+              Contact Us <span className="text-lg text-primary/60 font-sans">→</span>
+            </Link>
           </div>
 
           {/* Desktop Footer (grid view) */}
