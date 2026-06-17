@@ -1,8 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 import { Send, CheckCircle2, ArrowLeft, Phone, Mail } from "lucide-react";
 import { useState, FormEvent } from "react";
+import { z } from "zod";
 
 import { StoreLayout } from "@/components/StoreLayout";
+
+const submitContactForm = createServerFn({ method: "POST" })
+  .inputValidator(
+    z.object({
+      name: z.string().min(1, "Name is required"),
+      email: z.string().email("Invalid email address"),
+      message: z.string().min(1, "Message is required"),
+    })
+  )
+  .handler(async ({ data }) => {
+    const { sendContactEmail } = await import("../lib/api/email.server");
+    return sendContactEmail(data);
+  });
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -20,18 +35,24 @@ function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setError(null);
+    try {
+      await submitContactForm({ data: formData });
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
-    }, 1200);
+    } catch (err: any) {
+      console.error("Failed to send message:", err);
+      setError(err?.message || "Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -122,6 +143,13 @@ function ContactPage() {
                   className="w-full bg-background border border-blush-strong rounded-2xl px-4 py-3.5 outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 placeholder:text-muted-foreground/60 font-semibold text-sm transition-all shadow-sm resize-none"
                 />
               </div>
+
+              {/* Error Message */}
+              {error && (
+                <div className="bg-destructive/10 border border-destructive/20 text-destructive text-xs font-semibold px-4 py-3.5 rounded-2xl animate-in fade-in duration-200">
+                  {error}
+                </div>
+              )}
 
               {/* Submit Button */}
               <button
