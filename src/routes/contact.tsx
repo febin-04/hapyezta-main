@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Send, CheckCircle2, ArrowLeft, Phone, Mail } from "lucide-react";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 
 import { StoreLayout } from "@/components/StoreLayout";
 
@@ -21,7 +21,7 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 

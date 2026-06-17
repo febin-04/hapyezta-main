@@ -87,7 +87,7 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
       </div>
 
       {/* Footer */}
-      <footer className="bg-blush mt-12 px-6 md:px-10 lg:px-14 py-10 border-t border-blush-strong/10">
+      <footer className="bg-blush mt-12 px-6 md:px-10 lg:px-14 pt-10 pb-28 md:pb-10 border-t border-blush-strong/10">
         <div className="w-full">
           {/* Mobile Footer (accordion view) */}
           <div className="md:hidden">
@@ -110,7 +110,7 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
             </details>
             <Link
               to="/contact"
-              className="flex justify-between items-center text-primary font-bold py-3.5 font-display hover:text-primary/80 transition-colors"
+              className="flex justify-between items-center text-primary font-bold py-3.5 font-display hover:text-primary/80 transition-colors cursor-pointer border-b border-blush-strong/60"
             >
               Contact Us <span className="text-xl">+</span>
             </Link>
