@@ -1,0 +1,157 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", "Quicksand", ui-sans-serif, sans-serif;
+  --color-blush: var(--blush);
+  --color-blush-strong: var(--blush-strong);
+  --color-cream: var(--cream);
+  
+  /* HAPYEZTA Custom Colors */
+  --color-brand-teal: #1c978f;
+  --color-brand-orange: #f47523;
+  --color-brand-yellow: #fcb11b;
+  --color-brand-purple: #7f58a5;
+  --color-brand-coral: #f26c58;
+  --color-brand-cream: #faf6ee;
+}
+
+:root {
+  --radius: 1.25rem;
+  --background: #faf6ee;
+  --foreground: #2c2523;
+  --card: #ffffff;
+  --card-foreground: #2c2523;
+  --popover: #ffffff;
+  --popover-foreground: #2c2523;
+  --primary: #f47523;
+  --primary-foreground: #faf6ee;
+  --secondary: #1c978f;
+  --secondary-foreground: #faf6ee;
+  --muted: #f3ece0;
+  --muted-foreground: #786b66;
+  --accent: #fcb11b;
+  --accent-foreground: #2c2523;
+  --destructive: #f26c58;
+  --destructive-foreground: #faf6ee;
+  --border: #e8dfd0;
+  --input: #e8dfd0;
+  --ring: #f47523;
+  --blush: #fdfaf4;
+  --blush-strong: #e8dfd0;
+  --cream: #faf6ee;
+  --chart-1: #fcb11b;
+  --chart-2: #1c978f;
+  --chart-3: #7f58a5;
+  --chart-4: #f26c58;
+  --chart-5: #f47523;
+  --sidebar: #faf6ee;
+  --sidebar-foreground: #2c2523;
+  --sidebar-primary: #f47523;
+  --sidebar-primary-foreground: #faf6ee;
+  --sidebar-accent: #f3ece0;
+  --sidebar-accent-foreground: #f47523;
+  --sidebar-border: #e8dfd0;
+  --sidebar-ring: #f47523;
+}
+
+.dark {
+  --background: #1e1a18;
+  --foreground: #fdfaf4;
+  --card: #272220;
+  --card-foreground: #fdfaf4;
+  --popover: #272220;
+  --popover-foreground: #fdfaf4;
+  --primary: #f47523;
+  --primary-foreground: #faf6ee;
+  --secondary: #1c978f;
+  --secondary-foreground: #faf6ee;
+  --muted: #332d2a;
+  --muted-foreground: #aca09b;
+  --accent: #fcb11b;
+  --accent-foreground: #1e1a18;
+  --destructive: #f26c58;
+  --destructive-foreground: #faf6ee;
+  --border: #3f3734;
+  --input: #3f3734;
+  --ring: #f47523;
+  --blush: #272220;
+  --blush-strong: #3f3734;
+  --cream: #1e1a18;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 500;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
