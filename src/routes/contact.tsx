@@ -169,8 +169,8 @@ function ContactPage() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground">Email</h3>
-                <a href="mailto:info@dreamstorekannur.com" className="text-xs text-muted-foreground font-semibold hover:text-primary transition-colors mt-0.5 block">
-                  info@dreamstorekannur.com
+                <a href="mailto:hapyezta@gmail.com" className="text-xs text-muted-foreground font-semibold hover:text-primary transition-colors mt-0.5 block">
+                  hapyezta@gmail.com
                 </a>
               </div>
             </div>
