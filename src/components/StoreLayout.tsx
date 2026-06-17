@@ -118,14 +118,12 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
                 <li><span className="hover:text-primary transition-colors cursor-pointer">Shipping policy</span></li>
                 <li><span className="hover:text-primary transition-colors cursor-pointer">Returns</span></li>
                 <li>
-                  <a
-                    href="https://wa.me/918921502990"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/contact"
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </details>
@@ -167,14 +165,12 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
                 <li><span className="hover:text-primary transition-colors cursor-pointer">Shipping Policy</span></li>
                 <li><span className="hover:text-primary transition-colors cursor-pointer">Returns & Exchanges</span></li>
                 <li>
-                  <a
-                    href="https://wa.me/918921502990"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/contact"
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

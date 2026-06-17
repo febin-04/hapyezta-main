@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SigninRouteImport } from './routes/signin'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SearchRouteImport } from './routes/search'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductProductIdRouteImport } from './routes/product.$productId'
@@ -29,6 +30,11 @@ const ShopRoute = ShopRouteImport.update({
 const SearchRoute = SearchRouteImport.update({
   id: '/search',
   path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CartRoute = CartRouteImport.update({
@@ -50,6 +56,7 @@ const ProductProductIdRoute = ProductProductIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
   '/search': typeof SearchRoute
   '/shop': typeof ShopRoute
   '/signin': typeof SigninRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
   '/search': typeof SearchRoute
   '/shop': typeof ShopRoute
   '/signin': typeof SigninRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
   '/search': typeof SearchRoute
   '/shop': typeof ShopRoute
   '/signin': typeof SigninRoute
@@ -77,16 +86,25 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cart'
+    | '/contact'
     | '/search'
     | '/shop'
     | '/signin'
     | '/product/$productId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cart' | '/search' | '/shop' | '/signin' | '/product/$productId'
+  to:
+    | '/'
+    | '/cart'
+    | '/contact'
+    | '/search'
+    | '/shop'
+    | '/signin'
+    | '/product/$productId'
   id:
     | '__root__'
     | '/'
     | '/cart'
+    | '/contact'
     | '/search'
     | '/shop'
     | '/signin'
@@ -96,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CartRoute: typeof CartRoute
+  ContactRoute: typeof ContactRoute
   SearchRoute: typeof SearchRoute
   ShopRoute: typeof ShopRoute
   SigninRoute: typeof SigninRoute
@@ -125,6 +144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cart': {
       id: '/cart'
       path: '/cart'
@@ -152,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CartRoute: CartRoute,
+  ContactRoute: ContactRoute,
   SearchRoute: SearchRoute,
   ShopRoute: ShopRoute,
   SigninRoute: SigninRoute,
