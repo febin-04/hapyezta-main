@@ -91,6 +91,14 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
           <div className="md:hidden">
             <details className="border-b border-blush-strong py-3 group">
               <summary className="flex justify-between items-center text-primary font-bold cursor-pointer list-none font-display">
+                About Us <span className="text-xl group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <p className="text-sm text-muted-foreground pt-2 leading-relaxed">
+                Your destination for creative craft kits, premium sticker sheets, diaries, and unique stationery designed to make creation happy.
+              </p>
+            </details>
+            <details className="border-b border-blush-strong py-3 group">
+              <summary className="flex justify-between items-center text-primary font-bold cursor-pointer list-none font-display">
                 Let’s stay linked! <span className="text-xl group-open:rotate-45 transition-transform">+</span>
               </summary>
               <p className="text-sm text-muted-foreground pt-2">
