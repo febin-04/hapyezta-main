@@ -24,19 +24,7 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
               <HapyeztaLogo emblemSize={34} wordmarkHeight={14} />
             </Link>
             
-            <div className="flex items-center gap-3">
-              <Link to="/search" aria-label="Search" className="text-primary">
-                <Search className="w-6 h-6" />
-              </Link>
-              <Link to="/cart" aria-label="Cart" className="relative text-primary">
-                <ShoppingCart className="w-6 h-6" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-2 bg-primary text-primary-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                    {cartCount}
-                  </span>
-                )}
-              </Link>
-            </div>
+            <div className="w-8" />
           </div>
 
           {/* Desktop Header */}
