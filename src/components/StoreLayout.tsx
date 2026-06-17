@@ -16,9 +16,7 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
         <header className="sticky top-0 z-30 bg-background/95 backdrop-blur border-b border-border">
           {/* Mobile Header */}
           <div className="flex items-center justify-between px-4 py-3 max-w-md mx-auto md:hidden">
-            <button aria-label="Menu" className="text-primary p-1">
-              <Menu className="w-6 h-6" />
-            </button>
+            <div className="w-8" />
             
             <Link to="/" className="flex items-center">
               <HapyeztaLogo emblemSize={34} wordmarkHeight={14} />
