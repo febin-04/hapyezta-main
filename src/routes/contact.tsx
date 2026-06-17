@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Send, CheckCircle2, ArrowLeft } from "lucide-react";
+import { Send, CheckCircle2, ArrowLeft, Phone, Mail } from "lucide-react";
 import { useState } from "react";
 
 import { StoreLayout } from "@/components/StoreLayout";
@@ -140,6 +140,41 @@ function ContactPage() {
               </button>
             </form>
           )}
+        </div>
+
+        {/* Store Information Card */}
+        <div className="w-full max-w-md bg-card border border-border shadow-md rounded-3xl p-6 sm:p-8 mt-6 animate-in fade-in-50 slide-in-from-bottom-5 duration-500">
+          <h2 className="text-foreground text-lg font-bold font-display mb-5">
+            Store Information
+          </h2>
+          
+          <div className="space-y-5">
+            {/* Phone */}
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple shrink-0 shadow-sm">
+                <Phone className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground">Phone</h3>
+                <a href="tel:+919292577005" className="text-xs text-muted-foreground font-semibold hover:text-primary transition-colors mt-0.5 block">
+                  +91 92925 77005
+                </a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple shrink-0 shadow-sm">
+                <Mail className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground">Email</h3>
+                <a href="mailto:info@dreamstorekannur.com" className="text-xs text-muted-foreground font-semibold hover:text-primary transition-colors mt-0.5 block">
+                  info@dreamstorekannur.com
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </StoreLayout>
