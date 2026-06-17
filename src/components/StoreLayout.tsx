@@ -112,7 +112,7 @@ export function StoreLayout({ children, cartCount = 0 }: { children: ReactNode; 
               to="/contact"
               className="flex justify-between items-center text-primary font-bold py-3.5 font-display hover:text-primary/80 transition-colors"
             >
-              Contact Us <span className="text-lg text-primary/60 font-sans">→</span>
+              Contact Us <span className="text-xl">+</span>
             </Link>
           </div>
 
