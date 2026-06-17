@@ -77,7 +77,7 @@ function ContactPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Field */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-brand-purple font-bold text-xs tracking-wider uppercase">
+                <label htmlFor="name" className="text-primary font-bold text-xs tracking-wider uppercase">
                   Your Name
                 </label>
                 <input
@@ -87,13 +87,13 @@ function ContactPage() {
                   placeholder="Enter your name..."
                   value={formData.name}
                   onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                  className="w-full bg-background border border-blush-strong rounded-2xl px-4 py-3.5 outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/10 placeholder:text-muted-foreground/60 font-semibold text-sm transition-all shadow-sm"
+                  className="w-full bg-background border border-blush-strong rounded-2xl px-4 py-3.5 outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 placeholder:text-muted-foreground/60 font-semibold text-sm transition-all shadow-sm"
                 />
               </div>
 
               {/* Email Field */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-brand-purple font-bold text-xs tracking-wider uppercase">
+                <label htmlFor="email" className="text-primary font-bold text-xs tracking-wider uppercase">
                   Email Address
                 </label>
                 <input
@@ -103,13 +103,13 @@ function ContactPage() {
                   placeholder="Enter your email..."
                   value={formData.email}
                   onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                  className="w-full bg-background border border-blush-strong rounded-2xl px-4 py-3.5 outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/10 placeholder:text-muted-foreground/60 font-semibold text-sm transition-all shadow-sm"
+                  className="w-full bg-background border border-blush-strong rounded-2xl px-4 py-3.5 outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 placeholder:text-muted-foreground/60 font-semibold text-sm transition-all shadow-sm"
                 />
               </div>
 
               {/* Message Field */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-brand-purple font-bold text-xs tracking-wider uppercase">
+                <label htmlFor="message" className="text-primary font-bold text-xs tracking-wider uppercase">
                   Message
                 </label>
                 <textarea
@@ -119,7 +119,7 @@ function ContactPage() {
                   placeholder="Write your dreamy thoughts here..."
                   value={formData.message}
                   onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
-                  className="w-full bg-background border border-blush-strong rounded-2xl px-4 py-3.5 outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/10 placeholder:text-muted-foreground/60 font-semibold text-sm transition-all shadow-sm resize-none"
+                  className="w-full bg-background border border-blush-strong rounded-2xl px-4 py-3.5 outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 placeholder:text-muted-foreground/60 font-semibold text-sm transition-all shadow-sm resize-none"
                 />
               </div>
 
@@ -127,7 +127,7 @@ function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-brand-purple to-brand-orange hover:from-brand-purple/95 hover:to-brand-orange/95 text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm flex items-center justify-center gap-2 shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-75 disabled:pointer-events-none"
+                className="w-full bg-primary hover:bg-primary/95 text-primary-foreground font-bold py-3.5 px-6 rounded-full transition-all text-sm flex items-center justify-center gap-2 shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-75 disabled:pointer-events-none"
               >
                 {isSubmitting ? (
                   <span>Sending...</span>
@@ -151,7 +151,7 @@ function ContactPage() {
           <div className="space-y-5">
             {/* Phone */}
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple shrink-0 shadow-sm">
+              <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0 shadow-sm">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
@@ -164,7 +164,7 @@ function ContactPage() {
 
             {/* Email */}
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple shrink-0 shadow-sm">
+              <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0 shadow-sm">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
